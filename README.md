@@ -2,7 +2,7 @@
 
 **Team:** `PavanKumar9938` (Team ID: `17424795`) | **Kaggle Public LB:** **`44.99750` (`#1` Overall, Sub `#58788362`)** | **1× Tesla T4 Speed:** `21.30 ms` val / `21.93 ms` test (`Speed_T4 = 1.0000`)
 
-This repository contains the complete reproducible codebase, COCO-pretrained YOLO26 model weights (stored via Git LFS, `152.49 MB` across `v2`/`v3` artifacts), training and diagnostic notebooks, official starter evaluation scripts, submission CSVs, and technical reports for **DataSprint 2.0 — Intelligent Road Damage Detection** (Anveshan, NIE Mysuru).
+This repository contains the complete reproducible codebase, COCO-pretrained YOLO26 model weights (stored via Git LFS, `108.43 MB` deduplicated across `weights/best.pt`, `v3 last.pt`, and `v2 best.pt`), training and diagnostic notebooks, official starter evaluation scripts, submission CSVs, and technical reports for **DataSprint 2.0 — Intelligent Road Damage Detection** (Anveshan, NIE Mysuru).
 
 ---
 
@@ -27,10 +27,10 @@ This repository contains the complete reproducible codebase, COCO-pretrained YOL
 - `benchmark_speed.py`, `score.py`, `make_kaggle_submission.py`, `check_submission.py`, `train_baseline.py` — Official competition verification & scoring utilities.
 - `DataSprint2_Technical_Writeup_2Page.pdf` — Exact 2-page technical write-up satisfying competition Rules Section B.8.d.
 - `00_rules_and_guidelines/` — Official problem statement, rules, starter README, and presentation template.
-- `02_notebooks/` — Complete reproducible Colab notebooks (`00_full_dataset_eda_v1`, `01_datasprint_eda_and_baseline_v2`, `02_datasprint_full_train_v3`, `02b_datasprint_v3_eval_and_submit`, `03_datasprint_error_analysis_v1`, `03b_datasprint_error_analysis_v3`, `04_datasprint_dfine_m_skycrop_*`) + `starter_kit/`.
-- `03_results/` — All logged run manifests, training curves, `v2`/`v3` checkpoints (`*.pt` tracked via Git LFS), error analysis JSONs & plots (`c63e3536`, `461172af`).
+- `02_notebooks/` — Complete reproducible Colab notebooks (`00_full_dataset_eda_v1`, `01_datasprint_eda_and_baseline_v2`, `02_datasprint_full_train_v3`, `02b_datasprint_v3_eval_and_submit`, `03_datasprint_error_analysis_v1`, `03b_datasprint_error_analysis_v3`, `04_datasprint_dfine_m_skycrop_*`) + `starter_kit/inference.py` baseline reference.
+- `03_results/` — Canonical logged run manifests, training curves, `v2`/`v3` checkpoints (`*.pt` tracked via Git LFS), and error analysis JSONs & plots (`c63e3536`, `461172af`).
 - `04_submissions/` — Validated Kaggle submission CSVs (`submission_9e682727...csv` & winning `submission_001798f3...csv`).
-- `05_reports/` — Exported Google Sheets Tracker PDF, full living Technical Report PDF, 2-page Write-Up PDF, and `autopilot/project_memory.json`.
+- `05_reports/` — Exported Google Sheets Tracker PDF, full living Technical Report PDF, and `autopilot/project_memory.json`.
 
 *(Competition image/label files under `01_data/` are excluded via `.gitignore` per competition data distribution rules.)*
 

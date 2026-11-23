@@ -31,7 +31,9 @@
     "v3_eval_submit_notebook_id": "12CTcAZASn8QTHIpru7LrGOmWiXTich45",
     "v3_eval_submit_notebook_url": "https://colab.research.google.com/drive/12CTcAZASn8QTHIpru7LrGOmWiXTich45",
     "error_analysis_v3_notebook_id": "1GiBllDztand8Awsuro3qjgkGV41Jko53",
-    "error_analysis_v3_notebook_url": "https://colab.research.google.com/drive/1GiBllDztand8Awsuro3qjgkGV41Jko53"
+    "error_analysis_v3_notebook_url": "https://colab.research.google.com/drive/1GiBllDztand8Awsuro3qjgkGV41Jko53",
+    "github_repo_url": "https://github.com/9553943884pavan-alt/datasprint-2-road-damage-detection",
+    "writeup_pdf_drive_id": "1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir"
   },
   "experiment_memory": {
     "ablation_findings": [
@@ -134,7 +136,7 @@
     ]
   },
   "global_memory_prohibited": true,
-  "last_writer_skill": "ml-experiment-sync",
+  "last_writer_skill": "ml-submission-validator",
   "memory_scope": "project_specific_only",
   "next_experiments_queue": [
     {
@@ -146,7 +148,7 @@
     {
       "priority": 2,
       "owner_skill": "ml-submission-validator",
-      "status": "in_progress",
+      "status": "completed",
       "step": "Wipe local folder, sync Drive non-data folders + 152MB weights via Git LFS, generate 2-page PDF & push public GitHub repo"
     },
     {
@@ -168,7 +170,7 @@
     "docs_preserved_sections": [
       "User Notes"
     ],
-    "last_quality_gate_status": "passed_v3_ea_sync",
+    "last_quality_gate_status": "passed_github_lfs_and_2page_pdf",
     "sheets_last_operation_id": "op_sheets_v4_ea_v3",
     "sheets_preserved_regions": [],
     "slides_last_operation_id": null,
@@ -181,7 +183,11 @@
     "tracker_sheet_url": "https://docs.google.com/spreadsheets/d/1vV_PznSUwoTXO1xN0gbigATpID_XKsJ7TdEHRu2XYP0/edit",
     "report_doc_url": "https://docs.google.com/document/d/1Zuy7Fj5oitn2LOqGKfjFYh6lm-pICSMqKajjc3_DTHU/edit",
     "evidence_bundle_digest": "99ad152487d94421",
-    "report_content_digest": "fc51f0f6c5ac02c1"
+    "report_content_digest": "fc51f0f6c5ac02c1",
+    "github_repo_url": "https://github.com/9553943884pavan-alt/datasprint-2-road-damage-detection",
+    "pinned_commit_sha": "304a8da668c1d3e22dc34f3d64f1e09ab16d272f",
+    "writeup_pdf_path": "DataSprint2_Technical_Writeup_2Page.pdf",
+    "writeup_pdf_drive_id": "1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir"
   },
   "schema_version": "ml-project-memory/1",
   "setup_context": {
@@ -480,5 +486,5 @@
       "val_images": 2150
     }
   },
-  "updated_at_utc": "2026-11-23T19:10:17.943557+00:00"
+  "updated_at_utc": "2026-11-23T19:40:29.866267+00:00"
 }
