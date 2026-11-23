@@ -1,0 +1,244 @@
+{
+  "schema_version": "ml-setup/1",
+  "status": "planned",
+  "project_id": "datasprint-2-0-road-damage",
+  "inventory_complete": true,
+  "source_versions": {
+    "1sMEqtmkw405fjvZj7xmZJC3R1SeRiUUj": "2026-11-23T05:39:58.701Z",
+    "159X52KFse7ykPNHoE5L5mAjLymPZXmW7": "2026-11-23T05:40:05.385Z",
+    "1Hs2DhcFF2tw8dBPTNGRYOU-xk_NALB0Z": "2026-11-23T05:40:11.300Z",
+    "1Iip6cdBh1grEuR13Tl1eYRFK15yn-z57": "2026-11-23T05:40:16.971Z",
+    "1axa5zWSkGQ0QCCL_ahqMM9KaYM7kyOvq": "2026-11-23T05:40:23.059Z",
+    "1gfR3YfOLgbeOlZaei2VOH-19uclukgGM": "2026-11-23T05:40:31.620Z",
+    "1pio8jajemck82b2YhQ87nUNyQSQhgrRt": "2026-11-23T05:40:37.392Z",
+    "1k3Ks3XFkA-wIaezY7lQYGD8nrQmhz9dG": "2026-11-23T05:40:43.051Z",
+    "1r3x-qYyCFravCHpCcIU7i-eUvQeVkTBk": "2026-11-23T05:40:49.106Z",
+    "1x-w7Ef8joI0TjOJ4y0ylri2HIHzOc2aN": "2026-11-23T05:40:54.731Z",
+    "1Ru3B4DdwELdHnM-0kVV5xDuAghAZPXlD": "2026-11-23T05:41:01.490Z",
+    "1M0-Efls0tTwrzobYcAnlqlzVpWpny-dh": "2026-11-23T05:41:07.464Z",
+    "1k8MGAeoh72bNXl192mWuTquGPgdTFekX": "2026-11-23T05:41:17.330Z",
+    "1gSlnArpRws1XHxSRMRBrUdTl0UC0tK3Z": "2026-11-23T05:41:23.693Z",
+    "1BBDuwT-2WvNVfLh0i1AvRV2bMJU1Xs9e": "2026-11-23T05:41:29.600Z",
+    "1kbTHzxkszua6kx0NFLf5St5xHcFfA9Lf": "2026-11-23T05:41:38.089Z"
+  },
+  "input_hashes": {
+    "contract": "f37057f1144d4bee3e0c58c7542f5539c9c39e8f38ce1bc06fea940d77542489",
+    "inventory": "122ff3ca9250af021f6850c916c4794765f38150288d6a5b9e2e2a63bac9ccb6"
+  },
+  "root_folder_id": "1n8ddoVvmlpff1ScGLi_WPw-pPBe_AyC1",
+  "task_families": [
+    "computer_vision",
+    "deep_learning"
+  ],
+  "domain_profile": {
+    "inherited_families": [
+      "computer_vision",
+      "deep_learning"
+    ],
+    "is_hybrid": true,
+    "terminology": {
+      "unit": "Road Damage Detector (4-class bounding box predictor)",
+      "split": "Official Train (14,691) / Val (2,150) / Test (4,200 incl. hidden degraded)"
+    },
+    "tracked_parameters": [
+      "backbone",
+      "pretrained_weights",
+      "image_size",
+      "augmentation_policy",
+      "iou_threshold",
+      "conf_threshold",
+      "nms_type",
+      "batch_size",
+      "learning_rate",
+      "architecture",
+      "optimizer",
+      "lr_scheduler",
+      "warmup_ratio",
+      "epochs_or_steps",
+      "weight_decay",
+      "dropout",
+      "precision_dtype",
+      "detector_family",
+      "t4_median_latency_ms",
+      "robustness_aug_policy",
+      "confidence_floor",
+      "max_det"
+    ],
+    "candidate_metrics": [
+      "mAP_50",
+      "mAP_50_95",
+      "mean_iou",
+      "dice_score",
+      "top1_accuracy",
+      "fps_throughput",
+      "val_loss",
+      "train_loss",
+      "f1_score",
+      "throughput_samples_per_sec",
+      "peak_vram_gib",
+      "final_score_proxy_accuracy",
+      "precision_best_f1",
+      "recall_best_f1",
+      "speed_score_t4",
+      "robustness_map50",
+      "median_latency_ms_t4"
+    ],
+    "extra_context_keys": [
+      "image_resolution",
+      "iou_threshold",
+      "eval_augmentation_tta",
+      "checkpoint_selection_metric",
+      "precision_dtype",
+      "confidence_floor",
+      "max_dets_per_image",
+      "t4_speed_target_ms",
+      "degradation_robustness_eval"
+    ],
+    "leakage_controls": [
+      "Group split by video/patient/scene/camera to prevent near-duplicate frame leakage",
+      "Apply random augmentations to training split only",
+      "Stage image archives to /content/autopilot_cache",
+      "Select checkpoint on validation split only",
+      "Verify optimizer/scheduler/scaler/RNG state for resume",
+      "No outside road/pavement/crack data; competition data only",
+      "Generic COCO or ImageNet pretrained weights only (never road-damage weights)",
+      "Keep low-confidence detections down to 0.001; max 100 detections per image",
+      "Synthetic blur/low-light/noise/JPEG degradations applied only to training or local robustness stress-val, never mixed across splits"
+    ],
+    "sheets_views": [
+      "Ablations & Hyperparameters",
+      "Training Curves",
+      "Colab Compute & Resource Ledger"
+    ],
+    "docs_style_guide": "[computer_vision] Resolution & augmentation ablations, mAP/IoU across object sizes/classes, qualitative failure taxonomy, and FPS/latency tradeoff. | [deep_learning] Convergence curves, train-val generalization gap, architecture & regularization ablations, and checkpoint resume verification."
+  },
+  "folder_actions": [
+    {
+      "slot": "00_rules_and_guidelines",
+      "action": "verify_registered_id",
+      "folder_id": "1iNg2ypQ9BAmOk3y98D2metI4A8kCblE6"
+    },
+    {
+      "slot": "01_data",
+      "action": "verify_registered_id",
+      "folder_id": "1SVsus3W6pdd7i1T4SfuJFU-_OI5InSwk"
+    },
+    {
+      "slot": "02_notebooks",
+      "action": "verify_registered_id",
+      "folder_id": "1j-5gkt3cAbHwkeSZXfC72i_DEVJ76PXx"
+    },
+    {
+      "slot": "03_results",
+      "action": "verify_registered_id",
+      "folder_id": "15rE0APpVhsF5QP5VZuOuWg-rlicwS7__"
+    },
+    {
+      "slot": "04_submissions",
+      "action": "verify_registered_id",
+      "folder_id": "1xiPY0OTM-2HlBej78LTa-OWSR1PkalP0"
+    },
+    {
+      "slot": "05_reports",
+      "action": "verify_registered_id",
+      "folder_id": "1O2yze88kBeQc3fHy-rKlHzHngb2Gt-J-"
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "remote_writes_performed": false,
+  "note": "Caller must verify IDs and root parents using actual provider readbacks.",
+  "auto_detection": {
+    "detected_families": [
+      "computer_vision"
+    ],
+    "confidence": "high",
+    "is_hybrid": false,
+    "evidence_by_family": {
+      "computer_vision": [
+        "column:image_id",
+        "import:ultralytics",
+        "import:torchvision",
+        "rule:map@d+|mean average precision",
+        "rule:iou"
+      ]
+    },
+    "schema_signals": {
+      "temporal_columns": [],
+      "entity_or_group_columns": [],
+      "media_columns": [
+        "image_id"
+      ],
+      "text_or_prompt_columns": [],
+      "candidate_target_columns": [
+        "class_id",
+        "y_min",
+        "y_max"
+      ]
+    },
+    "domain_profile": {
+      "inherited_families": [
+        "computer_vision"
+      ],
+      "is_hybrid": false,
+      "terminology": {
+        "unit": "Road Damage Detector (4-class bounding box predictor)",
+        "split": "Official Train (14,691) / Val (2,150) / Test (4,200 incl. hidden degraded)"
+      },
+      "tracked_parameters": [
+        "backbone",
+        "pretrained_weights",
+        "image_size",
+        "augmentation_policy",
+        "iou_threshold",
+        "conf_threshold",
+        "nms_type",
+        "batch_size",
+        "learning_rate",
+        "detector_family",
+        "t4_median_latency_ms",
+        "robustness_aug_policy",
+        "confidence_floor",
+        "max_det"
+      ],
+      "candidate_metrics": [
+        "mAP_50",
+        "mAP_50_95",
+        "mean_iou",
+        "dice_score",
+        "top1_accuracy",
+        "fps_throughput",
+        "final_score_proxy_accuracy",
+        "precision_best_f1",
+        "recall_best_f1",
+        "speed_score_t4",
+        "robustness_map50",
+        "median_latency_ms_t4"
+      ],
+      "extra_context_keys": [
+        "image_resolution",
+        "iou_threshold",
+        "eval_augmentation_tta",
+        "confidence_floor",
+        "max_dets_per_image",
+        "t4_speed_target_ms",
+        "degradation_robustness_eval"
+      ],
+      "leakage_controls": [
+        "Group split by video/patient/scene/camera to prevent near-duplicate frame leakage",
+        "Apply random augmentations to training split only",
+        "Stage image archives to /content/autopilot_cache",
+        "No outside road/pavement/crack data; competition data only",
+        "Generic COCO or ImageNet pretrained weights only (never road-damage weights)",
+        "Keep low-confidence detections down to 0.001; max 100 detections per image",
+        "Synthetic blur/low-light/noise/JPEG degradations applied only to training or local robustness stress-val, never mixed across splits"
+      ],
+      "sheets_views": [
+        "Ablations & Hyperparameters",
+        "Training Curves",
+        "Colab Compute & Resource Ledger"
+      ],
+      "docs_style_guide": "[computer_vision] Resolution & augmentation ablations, mAP/IoU across object sizes/classes, qualitative failure taxonomy, and FPS/latency tradeoff."
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "train": {
+    "total_images": 2179,
+    "damaged_images": 8523,
+    "background_only_images": 0,
+    "total_boxes": 17517,
+    "invalid_boxes": 0,
+    "class_counts": {
+      "D00_longitudinal_crack": 4600,
+      "D10_transverse_crack": 3132,
+      "D20_alligator_crack": 5864,
+      "D40_pothole": 3921
+    },
+    "top_resolutions_sample250": {
+      "600x600": 152,
+      "720x720": 96,
+      "540x540": 1,
+      "1024x1024": 1
+    }
+  },
+  "val": {
+    "total_images": 2150,
+    "damaged_images": 1254,
+    "background_only_images": 896,
+    "total_boxes": 2561,
+    "invalid_boxes": 0,
+    "class_counts": {
+      "D00_longitudinal_crack": 695,
+      "D10_transverse_crack": 454,
+      "D20_alligator_crack": 824,
+      "D40_pothole": 588
+    },
+    "top_resolutions_sample250": {
+      "600x600": 161,
+      "720x720": 83,
+      "1024x1024": 6
+    }
+  },
+  "val_image_ids_rows": 2150,
+  "test_image_ids_rows": 4200,
+  "staged_test_images": 4200
+}

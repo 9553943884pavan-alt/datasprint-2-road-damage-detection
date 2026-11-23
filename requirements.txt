@@ -1,0 +1,13 @@
+ultralytics==8.4.216
+torch==2.14.1
+torchvision==0.29.1
+numpy==2.4.6
+pillow==11.3.0
+pandas==2.2.3
+albumentations==2.0.8
+cleanlab==2.9.0
+opencv-python-headless
+scikit-learn
+scipy
+matplotlib
+pymupdf

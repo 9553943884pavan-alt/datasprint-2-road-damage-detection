@@ -1,0 +1,31 @@
+{
+  "train": {
+    "total_images": 14691,
+    "damaged_images": 8523,
+    "background_only_images": 6168,
+    "total_boxes": 17517,
+    "invalid_boxes": 0,
+    "class_counts": {
+      "D00_longitudinal_crack": 4600,
+      "D10_transverse_crack": 3132,
+      "D20_alligator_crack": 5864,
+      "D40_pothole": 3921
+    }
+  },
+  "val": {
+    "total_images": 2150,
+    "damaged_images": 1254,
+    "background_only_images": 896,
+    "total_boxes": 2561,
+    "invalid_boxes": 0,
+    "class_counts": {
+      "D00_longitudinal_crack": 695,
+      "D10_transverse_crack": 454,
+      "D20_alligator_crack": 824,
+      "D40_pothole": 588
+    }
+  },
+  "val_image_ids_rows": 2150,
+  "test_image_ids_rows": 4200,
+  "staged_test_images": 4200
+}

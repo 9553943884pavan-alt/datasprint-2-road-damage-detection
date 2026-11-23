@@ -1,0 +1,134 @@
+{
+  "integrity": {
+    "train_files": 14691,
+    "val_files": 2150,
+    "test_files": 4200,
+    "unreadable_total": 0,
+    "val_id_diff": 0,
+    "test_id_diff": 0,
+    "within_dups_train": 0,
+    "within_dups_val": 0,
+    "within_dups_test": 0,
+    "cross_dups_train_val": 0,
+    "cross_dups_train_test": 0,
+    "cross_dups_val_test": 0
+  },
+  "train_labels": {
+    "total_images": 14691,
+    "damaged_images": 8523,
+    "background_only_images": 6168,
+    "background_only_pct": 41.98,
+    "total_boxes": 17517,
+    "class_counts": {
+      "D00_longitudinal_crack": 4600,
+      "D10_transverse_crack": 3132,
+      "D20_alligator_crack": 5864,
+      "D40_pothole": 3921
+    },
+    "class_pct": {
+      "D00_longitudinal_crack": 26.26,
+      "D10_transverse_crack": 17.88,
+      "D20_alligator_crack": 33.48,
+      "D40_pothole": 22.38
+    },
+    "image_prevalence": {
+      "D00_longitudinal_crack": 3279,
+      "D10_transverse_crack": 1835,
+      "D20_alligator_crack": 4619,
+      "D40_pothole": 2120
+    },
+    "imbalance_ratio": 1.872,
+    "boxes_per_damaged_image_mean": 2.055,
+    "boxes_per_damaged_image_max": 14,
+    "cooccurrence": [
+      [
+        3279,
+        758,
+        864,
+        387
+      ],
+      [
+        758,
+        1835,
+        734,
+        152
+      ],
+      [
+        864,
+        734,
+        4619,
+        942
+      ],
+      [
+        387,
+        152,
+        942,
+        2120
+      ]
+    ]
+  },
+  "val_labels": {
+    "total_images": 2150,
+    "damaged_images": 1254,
+    "background_only_images": 896,
+    "background_only_pct": 41.67,
+    "total_boxes": 2561,
+    "class_counts": {
+      "D00_longitudinal_crack": 695,
+      "D10_transverse_crack": 454,
+      "D20_alligator_crack": 824,
+      "D40_pothole": 588
+    },
+    "class_pct": {
+      "D00_longitudinal_crack": 27.14,
+      "D10_transverse_crack": 17.73,
+      "D20_alligator_crack": 32.17,
+      "D40_pothole": 22.96
+    },
+    "image_prevalence": {
+      "D00_longitudinal_crack": 494,
+      "D10_transverse_crack": 258,
+      "D20_alligator_crack": 661,
+      "D40_pothole": 315
+    },
+    "imbalance_ratio": 1.815,
+    "boxes_per_damaged_image_mean": 2.042,
+    "boxes_per_damaged_image_max": 13,
+    "cooccurrence": [
+      [
+        494,
+        96,
+        117,
+        63
+      ],
+      [
+        96,
+        258,
+        96,
+        23
+      ],
+      [
+        117,
+        96,
+        661,
+        152
+      ],
+      [
+        63,
+        23,
+        152,
+        315
+      ]
+    ]
+  },
+  "zero_or_neg_boxes": 0,
+  "out_of_bounds_boxes": 0,
+  "gt_iou_overlaps": {
+    "iou_05_same": 13,
+    "iou_05_diff": 43,
+    "iou_06_same": 3,
+    "iou_06_diff": 35
+  },
+  "test_bpp_p05": 0.12272376929012346,
+  "val_bpp_p05": 0.14862760416666668
+}

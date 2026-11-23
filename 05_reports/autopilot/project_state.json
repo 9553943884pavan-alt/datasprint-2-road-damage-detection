@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "project_id": "datasprint-2-0-road-damage",
+  "registry": {
+    "root_folder": {
+      "id": "1n8ddoVvmlpff1ScGLi_WPw-pPBe_AyC1",
+      "name": "DataSprint_2.0_Road_Damage"
+    },
+    "folders": {
+      "00_rules_and_guidelines": "1iNg2ypQ9BAmOk3y98D2metI4A8kCblE6",
+      "01_data": "1SVsus3W6pdd7i1T4SfuJFU-_OI5InSwk",
+      "02_notebooks": "1j-5gkt3cAbHwkeSZXfC72i_DEVJ76PXx",
+      "03_results": "15rE0APpVhsF5QP5VZuOuWg-rlicwS7__",
+      "04_submissions": "1xiPY0OTM-2HlBej78LTa-OWSR1PkalP0",
+      "05_reports": "1O2yze88kBeQc3fHy-rKlHzHngb2Gt-J-",
+      "01_data/train_images": "1_HzF3IRl4Udt8a-U2MlLGF1za6JmR_qi",
+      "01_data/val_images": "1YWXGVrgVk2_XO6XC3dtth6csm4Mgl-wQ",
+      "01_data/test_images": "1cNYUsS7fHFeF3hBK8AFl1ALFBqjD690C",
+      "02_notebooks/starter_kit": "1lpdImS39pAVKjwOlxf4BO4dEslYP1d1R",
+      "05_reports/autopilot": "1UVnmQq3PbUZSZ1r9Wsw8M-2ZGaUs_NIe"
+    }
+  }
+}

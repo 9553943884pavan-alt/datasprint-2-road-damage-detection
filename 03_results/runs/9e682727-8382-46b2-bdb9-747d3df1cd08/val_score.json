@@ -1,0 +1,46 @@
+{
+  "main": {
+    "n_images": 2150,
+    "n_gt_boxes": {
+      "D00_longitudinal_crack": 695,
+      "D10_transverse_crack": 454,
+      "D20_alligator_crack": 824,
+      "D40_pothole": 588
+    },
+    "mAP50": 0.315901,
+    "mAP50_95": 0.124801,
+    "precision": 0.355948,
+    "recall": 0.386157,
+    "f1": 0.366789,
+    "confidence_threshold": 0.106,
+    "per_class": {
+      "D00_longitudinal_crack": {
+        "AP50": 0.252767,
+        "AP50_95": 0.093712
+      },
+      "D10_transverse_crack": {
+        "AP50": 0.210004,
+        "AP50_95": 0.07258
+      },
+      "D20_alligator_crack": {
+        "AP50": 0.485395,
+        "AP50_95": 0.209157
+      },
+      "D40_pothole": {
+        "AP50": 0.31544,
+        "AP50_95": 0.123753
+      }
+    }
+  },
+  "speed_score": 1.0,
+  "combined": {
+    "accuracy_score": 27.916033,
+    "accuracy_components": [
+      "mAP50",
+      "mAP50_95",
+      "precision",
+      "recall"
+    ],
+    "score": null
+  }
+}

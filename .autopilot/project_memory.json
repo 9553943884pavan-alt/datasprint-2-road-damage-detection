@@ -1,0 +1,484 @@
+{
+  "active_lineage": {
+    "baseline_revision_id": "rev_1",
+    "baseline_run_id": "9e682727-8382-46b2-bdb9-747d3df1cd08",
+    "best_metric_value": 46.068736,
+    "best_revision_id": "rev_1",
+    "best_run_id": "653d43d6-e88b-40a0-9ba3-b1af925900d8",
+    "best_train_run_id": "001798f3-a360-479d-a2bc-7d389ccf3203",
+    "completed_run_count": 5,
+    "active_in_progress_run_id": null,
+    "kaggle_public_lb_baseline": 26.8289,
+    "kaggle_public_lb_best": 44.9975,
+    "kaggle_public_rank": 1,
+    "kaggle_submission_ref": 58788362,
+    "last_error_analysis_run_id": "461172af-4de1-48a7-8042-a63b4dec4a3d"
+  },
+  "destinations": {
+    "active_notebook_id": "1RwvxlgxfbO9fhNWY-AZo5VXc8KdUSeov",
+    "data_transfer_notebook_id": "1yAcnDqVrQObanP-8huXbV9Ck5kgTlNDS",
+    "eda_notebook_id": "1lKe2GEiSjFYZa2hhKUa-UsVla8O7bvpJ",
+    "error_analysis_notebook_id": "154LbxJUDax4kfP6frMcZO7IityrrTHtG",
+    "presentation_slides_id": null,
+    "previous_notebook_id_v1": "19rMf7aoQeOT8GrysDo_otes5-PrV5Guo",
+    "previous_notebook_id_v2": "17WAbv0ZvuAGhYt3DhSdXt2UTIvr4kspq",
+    "report_doc_id": "1Zuy7Fj5oitn2LOqGKfjFYh6lm-pICSMqKajjc3_DTHU",
+    "tracker_sheet_id": "1vV_PznSUwoTXO1xN0gbigATpID_XKsJ7TdEHRu2XYP0",
+    "dfine_m_notebook_id": "1zNs1KLNs4byKr9qUp_Ba9gdtXD6qmkuk",
+    "dfine_m_notebook_url": "https://colab.research.google.com/drive/1zNs1KLNs4byKr9qUp_Ba9gdtXD6qmkuk",
+    "dfine_m_kaggle_notebook_id": "1naXPdLRw1tkNXLNlwJh8m-lSOfFoeMzf",
+    "dfine_m_kaggle_notebook_url": "https://colab.research.google.com/drive/1naXPdLRw1tkNXLNlwJh8m-lSOfFoeMzf",
+    "v3_eval_submit_notebook_id": "12CTcAZASn8QTHIpru7LrGOmWiXTich45",
+    "v3_eval_submit_notebook_url": "https://colab.research.google.com/drive/12CTcAZASn8QTHIpru7LrGOmWiXTich45",
+    "error_analysis_v3_notebook_id": "1GiBllDztand8Awsuro3qjgkGV41Jko53",
+    "error_analysis_v3_notebook_url": "https://colab.research.google.com/drive/1GiBllDztand8Awsuro3qjgkGV41Jko53"
+  },
+  "experiment_memory": {
+    "ablation_findings": [
+      {
+        "run_id": "9e682727-8382-46b2-bdb9-747d3df1cd08",
+        "revision_id": "rev_1",
+        "summary": "YOLO26s baseline (640px, 20ep, partial 2,179 train imgs): Val Acc = 27.9160/100 (mAP@50=0.3159, mAP@50:95=0.1248, P=0.3559, R=0.3862), T4 latency = 15.92ms (Speed=1.00), Synth Stress mAP@50 = 0.1030, Kaggle Public LB = 26.82890 (sub #58774828).",
+        "baseline_eligible": true
+      },
+      {
+        "run_id": "c63e3536-4431-4eeb-8837-89ae396a01de",
+        "revision_id": "rev_1",
+        "summary": "Deep Error Analysis on v2 (n=2,150 val, 109,296 raw boxes): TIDE Oracle Loc (+9.91 pts) & Bkg (+6.99 pts) dominate; 720x720 India domain collapses 2x vs 600x600 (0.1831 vs 0.3606); dark_luma DRI collapses -98.63% (0.0137); Clean-vs-Defect ROC-AUC=0.9015; D-ECE=0.0746 (underconfident); Eigen-CAM reveals sky/windshield attention waste.",
+        "baseline_eligible": false
+      },
+      {
+        "run_id": "c63e3536-4431-4eeb-8837-89ae396a01de",
+        "revision_id": "rev_1",
+        "summary": "Negative result: 5-fold OOF post-processing threshold/sky/clean gates dropped Clean Val from 27.9161 to 27.2620 (-0.6542 pts; 5/5 folds chose sky_cut=0.0, clean_gate=0.0).",
+        "baseline_eligible": false
+      },
+      {
+        "run_id": "001798f3-a360-479d-a2bc-7d389ccf3203",
+        "revision_id": "rev_1",
+        "summary": "YOLO26m full train (768px, 14,691 imgs, 50 ep in 5.696h on L4, 70/30 OneOf aug): best.pt (Ep 38) ultralytics val mAP@50=0.549, mAP@50:95=0.253, P=0.594, R=0.518 (D00=0.486, D10=0.481, D20=0.690, D40=0.539), L4 latency 12.8ms; weights saved on Drive (1fdbGdrbd89roYgHkpxHJzIMOMXjHKz6n, 44.06 MB) before 4h check_budget() halt.",
+        "baseline_eligible": false
+      },
+      {
+        "run_id": "653d43d6-e88b-40a0-9ba3-b1af925900d8",
+        "revision_id": "rev_1",
+        "summary": "v3 YOLO26m (768px, 14,691 imgs, Ep 38 best.pt, T4 A_raw): Clean Val Acc = 46.0687/100 (mAP@50=0.5465, mAP@50:95=0.2422, P=0.6106, R=0.5032), Stress mAP@50 = 0.2775 (2.69x vs v2), T4 latency = 21.302ms val / 21.925ms test (Speed=1.00), Final Proxy = 50.5461, Kaggle Public LB = 44.99750 (#1 OVERALL, sub #58788362, +1.4427 vs #2).",
+        "baseline_eligible": true
+      },
+      {
+        "run_id": "653d43d6-e88b-40a0-9ba3-b1af925900d8",
+        "revision_id": "rev_1",
+        "summary": "3-way T4 inference A/B ablation: C_lut_fliptta_wbf improved Clean Val Acc +1.4844 pts to 47.5532 (mAP@50=0.5688, Stress=0.2844), but doubled T4 latency to 43.641ms (Speed=0.758, -2.42 Composite pts), lowering Final Proxy to 49.4223 vs A_raw 50.5461.",
+        "baseline_eligible": false
+      },
+      {
+        "run_id": "461172af-4de1-48a7-8042-a63b4dec4a3d",
+        "revision_id": "rev_1",
+        "summary": "v3 Advanced T4 Error Analysis (689.14s, 0.3750 CUs, Cleanlab 2.9.0, n=2,150 Val): 500x bootstrap CI [44.731, 48.169] with paired gain [15.0578, 18.2246], P(v3>v2)=1.0; Cleanlab mean quality=0.9519 (28/2,150 flagged, drag=-0.3799); IoU@0.75 collapses to 0.1722 (TIDE Loc=+9.88, Bkg=+8.68); 720p India=0.3662 vs 600p=0.5941; dark_luma DRI=0.0484 (-95.16%); Eigen-CAM sky energy=22.75% above y=0.22*H; NMS iou=0.55 gains +0.2399 pts (n=600) & Bright CLAHE +0.0045; Test empty @0.226=51.67% vs Val 45.53%.",
+        "baseline_eligible": false
+      }
+    ],
+    "compute_units_total": 1.9231,
+    "failed_runs_and_pitfalls": [
+      {
+        "error": "AssertionError: Ultralytics YOLO.train missing augmentations param",
+        "notebook": "01_datasprint_eda_and_baseline_v1.ipynb",
+        "resolution": "Replaced in v2 with VAR_KEYWORD + DEFAULT_CFG_DICT validation and an actual Albumentations Compose dummy-image dry-run.",
+        "root_cause": "YOLO.train and YOLO.predict accept kwargs (**kwargs) validated against ultralytics.cfg.DEFAULT_CFG_DICT rather than explicit named inspect.signature parameters."
+      },
+      {
+        "error": "Colab Drive FUSE dropped/unflushed train_images after 2,271 of 14,691 files with 8 threads",
+        "notebook": "00_kaggle_to_drive_transfer.ipynb",
+        "resolution": "Updated transfer notebook to workers=2, 500-file batches with os.sync(), retry backoff, drive.flush_and_unmount(), and force_remount verification.",
+        "root_cause": "8-thread shutil.copy2 into /content/drive without os.sync() batching or drive.flush_and_unmount() disconnected/overflowed before FUSE flushed all buffered writes."
+      },
+      {
+        "error": "NameError: name 'inspect' is not defined in Error Analysis Stage 0",
+        "notebook": "03_datasprint_error_analysis_v1.ipynb (run 450e514d)",
+        "root_cause": "Stage 1 omitted `import inspect` referenced during ultralytics signature verification.",
+        "resolution": "Added `import inspect` and ran closure-aware symtable + sequential AST global audit (0 undefined globals); verified on run c63e3536."
+      },
+      {
+        "error": "Ultralytics YOLO26m batch=32 OOM on 22.5 GiB L4 at 768px",
+        "notebook": "02_datasprint_full_train_v3.ipynb (run 001798f3)",
+        "root_cause": "batch=32 at 768px exceeds L4 peak allocation; Ultralytics auto-recovered to batch=16 (~12.8 GiB steady).",
+        "resolution": "Cap initial batch at 24 for 768px YOLO26m/l on L4 and add periodic Drive checkpoint syncing in v4."
+      }
+    ],
+    "hyperparameter_lessons": [
+      {
+        "applied_to_v3": "70% clean / 30% single-degradation OneOf training; TF32 + cuDNN autotune + VRAM/RAM/Disk auto-scaling; vectorized YOLO normalization; <1ms LUT conditional low-light rescue A/B tested on clean + 4-bucket degraded val.",
+        "eda_run_id": "70228600-90a8-46f5-abbc-e7dfc6e168d4",
+        "finding": "100% 1:1 square RGB images with 0 duplicates/leaks; 42% background-only; D10 has 5.1x W/H thin geometry; cross-class GT overlaps require agnostic_nms=False; 95% of damage lies below y=0.30*H; Test set has distinct dark luma (20-50), severe blur (lap=2), JPEG (bpp=0.04-0.05), and grain tails."
+      },
+      {
+        "ea_run_id": "c63e3536-4431-4eeb-8837-89ae396a01de",
+        "finding": "Top-22% sky/windshield crop preserves >95% of damage boxes while removing Eigen-CAM distractor regions and zooming road pixels 1.28x; CLAHE contrast normalization targets Q4 Brightest & 720x720 Indian concrete collapse (0.1831 vs 0.3606).",
+        "planned_for_v4": "Train & infer with Top-22% Sky-Crop + CLAHE on YOLO26l and cross-family D-FINE-M (ustc-community/dfine-medium-coco, pure COCO) + WBF ensemble."
+      },
+      {
+        "run_id": "001798f3-a360-479d-a2bc-7d389ccf3203",
+        "finding": "close_mosaic=10 caused mild overfitting drift in Epochs 41-50 (mAP@50:95 slipped from Ep 38 peak 0.253 to 0.246-0.247 while best.pt safely retained Ep 38); 50 epochs @768px L4 bs=16 took 5.696h > 4h budget cap.",
+        "planned_for_v4": "Use close_mosaic=4..5 and max_hours>=7.5 on multi-hour 768px YOLO L4 runs; evaluate completed v3 best.pt cleanly via 02b_datasprint_v3_eval_and_submit.ipynb."
+      },
+      {
+        "run_id": "653d43d6-e88b-40a0-9ba3-b1af925900d8",
+        "finding": "Flip-TTA + WBF raises Clean Val +1.4844 pts (46.07 -> 47.55) on 1x T4, but 43.64ms median latency drops Speed_T4 from 1.000 to 0.758 (-2.42 Final pts); only sub-25ms fast pipelines or TensorRT WBF improve the official 85/10/5 composite.",
+        "next_action": "Benchmark <=25ms TensorRT / D-FINE-M + YOLO26m WBF before promoting ensemble over A_raw."
+      },
+      {
+        "run_id": "461172af-4de1-48a7-8042-a63b4dec4a3d",
+        "finding": "After v3, dark_luma DRI remains 0.0484 (D00=0.0005, D10=0.0001) and test-time linear gamma degraded -0.0056 (0.0262->0.0206), proving training-time dark augmentation frequency must rise. Eigen-CAM wastes 22.75% activation above y=0.22*H (1.41% GT), and NMS iou=0.55 beats 0.60 by +0.2399 pts.",
+        "next_action": "Test NMS iou=0.55 & Bright >155 CLAHE, then train Top-22% Sky-Crop + dark_luma D-FINE-M / YOLO26l."
+      }
+    ]
+  },
+  "global_memory_prohibited": true,
+  "last_writer_skill": "ml-experiment-sync",
+  "memory_scope": "project_specific_only",
+  "next_experiments_queue": [
+    {
+      "priority": 1,
+      "owner_skill": "ml-experiment-analysis",
+      "status": "completed",
+      "step": "Completed v3 Advanced T4 Error Analysis (461172af) and synced Google Sheets Tracker + Google Doc Report v3"
+    },
+    {
+      "priority": 2,
+      "owner_skill": "ml-submission-validator",
+      "status": "in_progress",
+      "step": "Wipe local folder, sync Drive non-data folders + 152MB weights via Git LFS, generate 2-page PDF & push public GitHub repo"
+    },
+    {
+      "priority": 3,
+      "owner_skill": "colab-notebook-builder",
+      "status": "queued",
+      "step": "Benchmark NMS iou=0.55 (+0.2399 val) + Bright CLAHE (+0.0045) & train Top-22% Sky-Crop D-FINE-M / v4 YOLO26l"
+    },
+    {
+      "priority": 4,
+      "owner_skill": "ml-project-slides",
+      "status": "queued",
+      "step": "Finalize Top-15 Finale PPT (gslides) before Thu Nov 26, 12:00 AM IST deadline"
+    }
+  ],
+  "project_id": "datasprint-2-0-road-damage",
+  "publication_memory": {
+    "docs_last_operation_id": "op_docs_v3_ea_v3",
+    "docs_preserved_sections": [
+      "User Notes"
+    ],
+    "last_quality_gate_status": "passed_v3_ea_sync",
+    "sheets_last_operation_id": "op_sheets_v4_ea_v3",
+    "sheets_preserved_regions": [],
+    "slides_last_operation_id": null,
+    "slides_preserved_slide_ids": [],
+    "submission_validation_status": "v3_validated_submitted_rank1",
+    "validated_submission_artifacts": [
+      "18vfSa46X-Cv7TY6ux77Ulk_XFDaDlt8j",
+      "1DG1K7U7sSxK-Xzmx2Any6OO-_lSeXVBz"
+    ],
+    "tracker_sheet_url": "https://docs.google.com/spreadsheets/d/1vV_PznSUwoTXO1xN0gbigATpID_XKsJ7TdEHRu2XYP0/edit",
+    "report_doc_url": "https://docs.google.com/document/d/1Zuy7Fj5oitn2LOqGKfjFYh6lm-pICSMqKajjc3_DTHU/edit",
+    "evidence_bundle_digest": "99ad152487d94421",
+    "report_content_digest": "fc51f0f6c5ac02c1"
+  },
+  "schema_version": "ml-project-memory/1",
+  "setup_context": {
+    "context7_verified_libraries": [
+      "/ultralytics/ultralytics",
+      "/albumentations-team/albumentations",
+      "/huggingface/transformers"
+    ],
+    "data_upload_status": "completed",
+    "domain_profile": {
+      "candidate_metrics": [
+        "mAP_50",
+        "mAP_50_95",
+        "mean_iou",
+        "dice_score",
+        "top1_accuracy",
+        "fps_throughput",
+        "val_loss",
+        "train_loss",
+        "f1_score",
+        "throughput_samples_per_sec",
+        "peak_vram_gib",
+        "final_score_proxy_accuracy",
+        "precision_best_f1",
+        "recall_best_f1",
+        "speed_score_t4",
+        "robustness_map50",
+        "median_latency_ms_t4"
+      ],
+      "docs_style_guide": "[computer_vision] Resolution & augmentation ablations, mAP/IoU across object sizes/classes, qualitative failure taxonomy, and FPS/latency tradeoff. | [deep_learning] Convergence curves, train-val generalization gap, architecture & regularization ablations, and checkpoint resume verification.",
+      "extra_context_keys": [
+        "image_resolution",
+        "iou_threshold",
+        "eval_augmentation_tta",
+        "checkpoint_selection_metric",
+        "precision_dtype",
+        "confidence_floor",
+        "max_dets_per_image",
+        "t4_speed_target_ms",
+        "degradation_robustness_eval"
+      ],
+      "inherited_families": [
+        "computer_vision",
+        "deep_learning"
+      ],
+      "is_hybrid": true,
+      "leakage_controls": [
+        "Group split by video/patient/scene/camera to prevent near-duplicate frame leakage",
+        "Apply random augmentations to training split only",
+        "Stage image archives to /content/autopilot_cache",
+        "Select checkpoint on validation split only",
+        "Verify optimizer/scheduler/scaler/RNG state for resume",
+        "No outside road/pavement/crack data; competition data only",
+        "Generic COCO or ImageNet pretrained weights only (never road-damage weights)",
+        "Keep low-confidence detections down to 0.001; max 100 detections per image",
+        "Synthetic blur/low-light/noise/JPEG degradations applied only to training or local robustness stress-val, never mixed across splits"
+      ],
+      "sheets_views": [
+        "Ablations & Hyperparameters",
+        "Training Curves",
+        "Colab Compute & Resource Ledger"
+      ],
+      "terminology": {
+        "split": "Official Train (14,691) / Val (2,150) / Test (4,200 incl. hidden degraded)",
+        "unit": "Road Damage Detector (4-class bounding box predictor)"
+      },
+      "tracked_parameters": [
+        "backbone",
+        "pretrained_weights",
+        "image_size",
+        "augmentation_policy",
+        "iou_threshold",
+        "conf_threshold",
+        "nms_type",
+        "batch_size",
+        "learning_rate",
+        "architecture",
+        "optimizer",
+        "lr_scheduler",
+        "warmup_ratio",
+        "epochs_or_steps",
+        "weight_decay",
+        "dropout",
+        "precision_dtype",
+        "detector_family",
+        "t4_median_latency_ms",
+        "robustness_aug_policy",
+        "confidence_floor",
+        "max_det"
+      ]
+    },
+    "drive_account": "p95117943@gmail.com",
+    "folder_slots": {
+      "00_rules_and_guidelines": "1iNg2ypQ9BAmOk3y98D2metI4A8kCblE6",
+      "01_data": "1SVsus3W6pdd7i1T4SfuJFU-_OI5InSwk",
+      "01_data/test_images": "1cNYUsS7fHFeF3hBK8AFl1ALFBqjD690C",
+      "01_data/train_images": "1_HzF3IRl4Udt8a-U2MlLGF1za6JmR_qi",
+      "01_data/val_images": "1YWXGVrgVk2_XO6XC3dtth6csm4Mgl-wQ",
+      "02_notebooks": "1j-5gkt3cAbHwkeSZXfC72i_DEVJ76PXx",
+      "02_notebooks/starter_kit": "1lpdImS39pAVKjwOlxf4BO4dEslYP1d1R",
+      "03_results": "15rE0APpVhsF5QP5VZuOuWg-rlicwS7__",
+      "04_submissions": "1xiPY0OTM-2HlBej78LTa-OWSR1PkalP0",
+      "05_reports": "1O2yze88kBeQc3fHy-rKlHzHngb2Gt-J-",
+      "05_reports/autopilot": "1UVnmQq3PbUZSZ1r9Wsw8M-2ZGaUs_NIe"
+    },
+    "hf_selected_assets": [
+      {
+        "asset_type": "model",
+        "domain_key": "computer_vision+deep_learning",
+        "estimated_vram_gib": 2.62,
+        "gpu_tier": "T4",
+        "license": "apache-2.0",
+        "mode": "fp16_train",
+        "repo_id": "PekingU/rtdetr_v2_r18vd",
+        "revision": "main"
+      },
+      {
+        "asset_type": "model",
+        "domain_key": "computer_vision+deep_learning",
+        "estimated_vram_gib": 2.61,
+        "gpu_tier": "T4",
+        "has_safetensors": true,
+        "license": "apache-2.0",
+        "mode": "fp16_train",
+        "param_count_billions": 0.0196,
+        "pipeline_tag": "object-detection",
+        "repo_id": "ustc-community/dfine-medium-coco",
+        "revision": "main",
+        "selection_score": 0.7077,
+        "verified_contract": {
+          "do_normalize": false,
+          "do_rescale": true,
+          "model_type": "d_fine",
+          "num_denoising": 100,
+          "pretrained_scope": "coco_only"
+        }
+      }
+    ],
+    "kaggle_competition_slug": "datasprint-2-road-damage-detection",
+    "kaggle_transfer_splits": [
+      "train_images",
+      "val_images"
+    ],
+    "last_completed_eda_run_id": "70228600-90a8-46f5-abbc-e7dfc6e168d4",
+    "library_docs_verifications": [
+      {
+        "atomic_pip_command": "!pip install -q --no-cache-dir --upgrade-strategy only-if-needed \"ultralytics==8.4.216\"",
+        "deprecations_count": 0,
+        "domain_key": "computer_vision+deep_learning",
+        "safe_extra_packages": [
+          "ultralytics==8.4.216"
+        ],
+        "status": "ok",
+        "verified_libraries": [
+          "timm",
+          "albumentations",
+          "ultralytics",
+          "torchvision",
+          "pytorch",
+          "accelerate",
+          "torchmetrics"
+        ]
+      },
+      {
+        "atomic_pip_command": "!pip install -q --no-cache-dir --upgrade-strategy only-if-needed \"transformers==5.24.0\" \"albumentations==2.0.8\" \"safetensors==0.8.0\" \"accelerate==1.16.0\"",
+        "deprecations_count": 0,
+        "domain_key": "computer_vision+deep_learning",
+        "safe_extra_packages": [
+          "transformers==5.24.0",
+          "albumentations==2.0.8",
+          "safetensors==0.8.0",
+          "accelerate==1.16.0"
+        ],
+        "status": "ok",
+        "verified_libraries": [
+          "timm",
+          "albumentations",
+          "ultralytics",
+          "torchvision",
+          "pytorch",
+          "accelerate",
+          "torchmetrics"
+        ]
+      },
+      {
+        "atomic_pip_command": "!pip install -q --no-cache-dir --upgrade-strategy only-if-needed \"ultralytics==8.4.216\" \"albumentations==2.0.8\"",
+        "deprecations_count": 0,
+        "domain_key": "computer_vision+deep_learning",
+        "safe_extra_packages": [
+          "ultralytics==8.4.216",
+          "albumentations==2.0.8"
+        ],
+        "status": "ok",
+        "verified_libraries": [
+          "timm",
+          "albumentations",
+          "ultralytics",
+          "torchvision",
+          "pytorch",
+          "accelerate",
+          "torchmetrics"
+        ]
+      },
+      {
+        "library": "cleanlab==2.9.0",
+        "context7_id": "/cleanlab/cleanlab",
+        "hf_reference": "Cleanlab/object-detection-tutorial",
+        "verified_apis": [
+          "cleanlab.object_detection.rank.get_label_quality_scores(labels, predictions)",
+          "cleanlab.object_detection.filter.find_label_issues(labels, predictions)",
+          "cleanlab.object_detection.rank.issues_from_scores(scores, threshold=0.5)"
+        ],
+        "verified_at_utc": "2026-11-23T17:48:17.713713+00:00"
+      },
+      {
+        "library": "albumentations==2.0.8",
+        "context7_id": "/albumentations-team/albumentations",
+        "verified_apis": [
+          "A.CLAHE(clip_limit=2.0, tile_grid_size=(8, 8), p=1.0)",
+          "A.ImageCompression(compression_type='jpeg', quality_range=(8, 18), p=1.0)",
+          "A.MotionBlur(blur_limit=(9, 13), p=1.0)"
+        ],
+        "verified_at_utc": "2026-11-23T17:48:17.713713+00:00"
+      },
+      {
+        "library": "ultralytics==8.4.216",
+        "context7_id": "/ultralytics/ultralytics",
+        "verified_apis": [
+          "YOLO.predict(..., imgsz=768, conf=0.001, iou=..., max_det=100, agnostic_nms=False)"
+        ],
+        "verified_at_utc": "2026-11-23T17:48:17.713713+00:00"
+      }
+    ],
+    "local_workspace": "c:\\Users\\Pavan\\Downloads\\DataSprinit",
+    "objective": "4-class road damage object detection (D00 longitudinal crack, D10 transverse crack, D20 alligator crack, D40 pothole) optimizing composite Final Score = 100*(0.30*mAP@50 + 0.25*mAP@50:95 + 0.15*Precision + 0.15*Recall + 0.10*Speed + 0.05*Robustness).",
+    "organizer_email_account": "iec2025049@iiita.ac.in",
+    "primary_metric_id": "final_score_proxy_accuracy",
+    "primary_metric_meta": {
+      "baseline_public_lb_score": 30.5,
+      "final_score_formula": "100*(0.30*mAP50 + 0.25*mAP50_95 + 0.15*Precision + 0.15*Recall + 0.10*Speed + 0.05*Robustness)",
+      "higher_is_better": true,
+      "public_lb_formula": "100*(0.30*mAP50 + 0.25*mAP50_95 + 0.15*Precision + 0.15*Recall)/0.85",
+      "speed_target_t4_ms": {
+        "scale": "log",
+        "score_0_0_gte": 250.0,
+        "score_1_0_lte": 25.0
+      }
+    },
+    "project_state_drive_id": "1vZBsTaT6pruaYGtq0PqStIxLaDIJp2K5",
+    "root_folder_id": "1n8ddoVvmlpff1ScGLi_WPw-pPBe_AyC1",
+    "root_folder_name": "DataSprint_2.0_Road_Damage",
+    "root_folder_url": "https://drive.google.com/drive/folders/1n8ddoVvmlpff1ScGLi_WPw-pPBe_AyC1",
+    "rules_and_constraints": {
+      "competition": "DataSprint 2.0 (23-25 Nov 2026, 36h, Anveshan NIE Mysuru)",
+      "finale_shortlist_top_n_per_track": 15,
+      "links": {
+        "linktree": "https://linktr.ee/anveshan_nie",
+        "whatsapp": "https://chat.whatsapp.com/FeKywQXx4EXBDrvLGiyDK1"
+      },
+      "mandatory_first_24h_valid_submission": true,
+      "max_writeup_pages": 2,
+      "one_team_one_track": true,
+      "registered_drive_files": {
+        "00_rules_and_guidelines/DataSprint2.0_by_Anveshan_PPT_Template.pptx": "159X52KFse7ykPNHoE5L5mAjLymPZXmW7",
+        "00_rules_and_guidelines/DataSprint_2.0_PS_Rules_and_Guidelines.md": "1sMEqtmkw405fjvZj7xmZJC3R1SeRiUUj",
+        "00_rules_and_guidelines/README.md": "1Hs2DhcFF2tw8dBPTNGRYOU-xk_NALB0Z",
+        "00_rules_and_guidelines/requirements.txt": "1Iip6cdBh1grEuR13Tl1eYRFK15yn-z57",
+        "01_data/test_image_ids.csv": "1k3Ks3XFkA-wIaezY7lQYGD8nrQmhz9dG",
+        "01_data/train_labels.csv": "1axa5zWSkGQ0QCCL_ahqMM9KaYM7kyOvq",
+        "01_data/val_image_ids.csv": "1pio8jajemck82b2YhQ87nUNyQSQhgrRt",
+        "01_data/val_labels.csv": "1gfR3YfOLgbeOlZaei2VOH-19uclukgGM",
+        "02_notebooks/starter_kit/README.md": "1BBDuwT-2WvNVfLh0i1AvRV2bMJU1Xs9e",
+        "02_notebooks/starter_kit/benchmark_speed.py": "1r3x-qYyCFravCHpCcIU7i-eUvQeVkTBk",
+        "02_notebooks/starter_kit/check_submission.py": "1x-w7Ef8joI0TjOJ4y0ylri2HIHzOc2aN",
+        "02_notebooks/starter_kit/inference.py": "1Ru3B4DdwELdHnM-0kVV5xDuAghAZPXlD",
+        "02_notebooks/starter_kit/make_kaggle_submission.py": "1M0-Efls0tTwrzobYcAnlqlzVpWpny-dh",
+        "02_notebooks/starter_kit/requirements.txt": "1kbTHzxkszua6kx0NFLf5St5xHcFfA9Lf",
+        "02_notebooks/starter_kit/score.py": "1k8MGAeoh72bNXl192mWuTquGPgdTFekX",
+        "02_notebooks/starter_kit/train_baseline.py": "1gSlnArpRws1XHxSRMRBrUdTl0UC0tK3Z"
+      },
+      "submission_limit_budget_note": "Budget conservatively for 5 max per organizer email unless clarified on WhatsApp.",
+      "submission_limit_email_max": 5,
+      "submission_limit_kaggle_max": 10,
+      "top10_offline_t4_accuracy_tolerance_pts": 2.0,
+      "top10_offline_t4_repro_minutes_max": 30
+    },
+    "split_and_leakage_policy": "Official train_images (14,691) and val_images (2,150) splits; no outside road/pavement data; generic COCO/ImageNet pretrained weights only; train-only augmentations (incl. blur/low-light/noise/JPEG robustness); keep conf >= 0.001 and max_det <= 100; write 'none' for empty test predictions.",
+    "task_families": [
+      "computer_vision",
+      "deep_learning"
+    ],
+    "val_images_smoke_uploaded": 10,
+    "verified_drive_image_counts": {
+      "test_images": 4200,
+      "train_images": 14691,
+      "val_images": 2150
+    }
+  },
+  "updated_at_utc": "2026-11-23T19:10:17.943557+00:00"
+}

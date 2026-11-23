@@ -1,0 +1,27 @@
+# Ignore ONLY competition data files and ephemeral runtime caches
+# (All .pt weights, inference code, notebooks, submissions, and reports are tracked)
+01_data/
+train_images/
+val_images/
+test_images/
+train_labels.csv
+val_labels.csv
+val_image_ids.csv
+test_image_ids.csv
+*.jpg
+*.jpeg
+
+# Ephemeral local verification outputs at repo root
+/val_pred.csv
+/val_speed.json
+/test_pred.csv
+/test_speed.json
+/submission.csv
+
+# Python / Jupyter / OS caches
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
