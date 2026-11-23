@@ -170,7 +170,7 @@
     "docs_preserved_sections": [
       "User Notes"
     ],
-    "last_quality_gate_status": "passed_github_lfs_and_2page_pdf",
+    "last_quality_gate_status": "passed_dedup_github_lfs_and_2page_pdf",
     "sheets_last_operation_id": "op_sheets_v4_ea_v3",
     "sheets_preserved_regions": [],
     "slides_last_operation_id": null,
@@ -185,9 +185,10 @@
     "evidence_bundle_digest": "99ad152487d94421",
     "report_content_digest": "fc51f0f6c5ac02c1",
     "github_repo_url": "https://github.com/9553943884pavan-alt/datasprint-2-road-damage-detection",
-    "pinned_commit_sha": "304a8da668c1d3e22dc34f3d64f1e09ab16d272f",
+    "pinned_commit_sha": "f85282da80f5552ef008bb4b2d629ae9c94e9cc9",
     "writeup_pdf_path": "DataSprint2_Technical_Writeup_2Page.pdf",
-    "writeup_pdf_drive_id": "1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir"
+    "writeup_pdf_drive_id": "1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir",
+    "dedup_verified_zero_duplicates": true
   },
   "schema_version": "ml-project-memory/1",
   "setup_context": {
@@ -486,5 +487,5 @@
       "val_images": 2150
     }
   },
-  "updated_at_utc": "2026-11-23T19:40:29.866267+00:00"
+  "updated_at_utc": "2026-11-23T19:46:02.898366+00:00"
 }
