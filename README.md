@@ -59,7 +59,8 @@ datasprint-2-road-damage-detection/
 │   ├── 03_datasprint_error_analysis_v1.ipynb   # Deep TIDE/DRI/Eigen-CAM error analysis on v2 baseline
 │   ├── 03b_datasprint_error_analysis_v3.ipynb  # GPU T4 Advanced EA (Cleanlab 2.9.0, NMS sweep, Eigen-CAM) on v3
 │   ├── 04_datasprint_dfine_m_skycrop_v1.ipynb  # Next-stage D-FINE-M + Top-22% Sky-Crop Colab notebook
-│   └── 04_datasprint_dfine_m_skycrop_kaggle.ipynb
+│   ├── 04_datasprint_dfine_m_skycrop_kaggle.ipynb
+│   └── 05_kaggle_submission_inference_benchmark.ipynb # Kaggle T4 command-driven inference, benchmark & submission notebook
 │
 ├── 03_results/                                 # Canonical run logs, weights, metrics & diagnostic plots (zero dupes)
 │   └── runs/
@@ -153,4 +154,4 @@ Run the notebooks inside `02_notebooks/` in sequence on Google Colab (L4/T4 GPU,
 
 - **Generic Pretrained Weights Only:** Initialized strictly from Ultralytics generic COCO checkpoints (`yolo26s.pt`, `yolo26m.pt`). Zero road/pavement/crack-pretrained weights and zero Objects365/DINOv3 weights were used.
 - **Competition Data Only:** Trained and validated solely on the official `14,691` train / `2,150` val / `4,200` test competition partitions with zero external road or crack datasets.
-- **Links:** [Google Sheets Experiment Tracker (Public View)](https://docs.google.com/spreadsheets/d/1vV_PznSUwoTXO1xN0gbigATpID_XKsJ7TdEHRu2XYP0/view?usp=sharing) | [Google Doc Full Technical Report (Public View)](https://docs.google.com/document/d/1Zuy7Fj5oitn2LOqGKfjFYh6lm-pICSMqKajjc3_DTHU/view?usp=sharing) | [2-Page Technical Write-Up PDF (Repo)](DataSprint2_Technical_Writeup_2Page.pdf) & [Drive Public View](https://drive.google.com/file/d/1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir/view?usp=sharing) | [Public Reports Folder (Drive)](https://drive.google.com/drive/folders/1O2yze88kBeQc3fHy-rKlHzHngb2Gt-J-?usp=sharing) *(competition dataset `01_data/` kept private)*
+- **Links:** [Kaggle T4 Submission Notebook (Public)](https://www.kaggle.com/code/pavankumar9938/datasprint-2-0-v3-yolo26m-inference-t4-benchmark) | [Kaggle Input Weights & Scripts Dataset (Public)](https://www.kaggle.com/datasets/pavankumar9938/datasprint2-v3-yolo26m-weights) | [Google Sheets Experiment Tracker (Public View)](https://docs.google.com/spreadsheets/d/1vV_PznSUwoTXO1xN0gbigATpID_XKsJ7TdEHRu2XYP0/view?usp=sharing) | [Google Doc Full Technical Report (Public View)](https://docs.google.com/document/d/1Zuy7Fj5oitn2LOqGKfjFYh6lm-pICSMqKajjc3_DTHU/view?usp=sharing) | [2-Page Technical Write-Up PDF (Repo)](DataSprint2_Technical_Writeup_2Page.pdf) & [Drive Public View](https://drive.google.com/file/d/1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir/view?usp=sharing) | [Public Reports Folder (Drive)](https://drive.google.com/drive/folders/1O2yze88kBeQc3fHy-rKlHzHngb2Gt-J-?usp=sharing) *(competition dataset `01_data/` kept private)*
