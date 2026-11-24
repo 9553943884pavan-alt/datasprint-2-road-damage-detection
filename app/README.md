@@ -2,6 +2,10 @@
 
 Full-stack road damage detection interface for **Anveshan DataSprint 2.0** (#1 Kaggle Public LB `44.99750`) powered by our champion `YOLO26m` weights (`weights/best.pt`) and root `inference.py`.
 
+## Live Production Deployment
+- **Frontend UI (Vercel):** https://roadguard-ai-datasprint2.vercel.app
+- **GPU API Backend (Modal NVIDIA A10):** https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run ([`/api/health`](https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run/api/health) · [`/docs`](https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run/docs))
+
 ## Stack
 - **Backend (`app/backend/`)**: Python, FastAPI, Uvicorn, Ultralytics `YOLO26m`, PyTorch CUDA/CPU auto-detection
 - **Frontend (`app/frontend/`)**: React 19, Vite, TypeScript, Tailwind CSS v4, **shadcn/ui**, **Magic UI**, **Aceternity UI**
@@ -33,7 +37,7 @@ pip install modal
 modal token new
 modal deploy app/modal_app.py
 ```
-Modal outputs a permanent HTTPS URL (e.g. `https://<workspace>--roadguard-ai-datasprint2-api.modal.run`). Verify `<MODAL_URL>/api/health` returns `device: "cuda"` (`NVIDIA A10G` / `L4`).
+Modal outputs a permanent HTTPS URL (currently `https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run`). Verify `<MODAL_URL>/api/health` returns `device: "cuda"` (`NVIDIA A10`).
 
 For zero cold starts during your Final Demo Round slot, set `min_containers=1` in `app/modal_app.py` shortly before presenting, then revert to `min_containers=0` afterward.
 

@@ -2,7 +2,16 @@
 
 **Team:** `PavanKumar9938` (Team ID: `17424795`) | **Kaggle Public LB:** **`44.99750` (`#1` Overall, Sub `#58788362`)** | **1× Tesla T4 Speed:** `21.30 ms` val / `21.93 ms` test (`Speed_T4 = 1.0000`)
 
-This repository contains the deduplicated, reproducible codebase, COCO-pretrained YOLO26 model weights (tracked via Git LFS, `108.43 MB` across `3` unique `.pt` checkpoints), Colab training and diagnostic notebooks, official starter evaluation scripts (consolidated under `02_notebooks/starter_kit/`), submission CSVs, and technical reports for **DataSprint 2.0 — Intelligent Road Damage Detection** (Anveshan, NIE Mysuru).
+This repository contains the deduplicated, reproducible codebase, COCO-pretrained YOLO26 model weights (tracked via Git LFS, `108.43 MB` across `3` unique `.pt` checkpoints), Colab training and diagnostic notebooks, official starter evaluation scripts (consolidated under `02_notebooks/starter_kit/`), full-stack web demo (`app/`), submission CSVs, and technical reports for **DataSprint 2.0 — Intelligent Road Damage Detection** (Anveshan, NIE Mysuru).
+
+---
+
+## Live Deployed Web App (Final Demo Round)
+
+- **Public Web UI (Vercel):** https://roadguard-ai-datasprint2.vercel.app
+- **NVIDIA A10 GPU Backend API (Modal):** https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run ([`/api/health`](https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run/api/health) · [`/docs`](https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run/docs))
+- **Verified Cloud GPU Inference:** `NVIDIA A10` (`cuda`), `YOLO26m (Epoch 38)` (`weights/best.pt`), `17.16 ms` (`58.3 FPS`) steady-state latency
+- **UI/Backend Stack:** React 19 + Vite + TypeScript + Tailwind CSS v4 + **shadcn/ui** + **Magic UI** + **Aceternity UI**, powered by **FastAPI** + `inference.py` + `weights/best.pt`
 
 ---
 
@@ -76,6 +85,19 @@ datasprint-2-road-damage-detection/
 │   ├── submission_9e682727-8382-46b2-bdb9-747d3df1cd08.csv  # v2 Baseline (Public LB 26.82890)
 │   └── submission_001798f3-a360-479d-a2bc-7d389ccf3203.csv  # v3 Champion (Public LB 44.99750, #1 Overall)
 │
+├── app/                                        # Full-stack Final Demo UI + GPU API
+│   ├── backend/
+│   │   ├── main.py                             # FastAPI server wrapping root inference.py + weights/best.pt
+│   │   ├── generate_samples.py                 # Generates deterministic synthetic .png road test fixtures
+│   │   └── requirements.txt                    # FastAPI / Uvicorn / Ultralytics API dependencies
+│   ├── frontend/                               # React + Vite + Tailwind CSS + shadcn/ui + Magic UI + Aceternity UI
+│   │   ├── src/                                # Live Inspector, Batch Inspector, Benchmarks & Model Card views
+│   │   ├── package.json
+│   │   └── vercel.json                         # Vercel SPA rewrite configuration
+│   ├── modal_app.py                            # Modal 1.x serverless NVIDIA A10 / L4 GPU deployment entrypoint
+│   ├── Dockerfile                              # Multi-stage CPU/GPU container serving /api/* + SPA on port 7860
+│   └── README.md                               # App-specific local dev & cloud deploy instructions
+│
 └── 05_reports/                                 # Living reports, tracker export & project state
     ├── DataSprint 2.0 — Road Damage Experiment Tracker.pdf
     ├── DataSprint 2.0 — Technical Report & Experiment Log.pdf
@@ -148,10 +170,39 @@ Run the notebooks inside `02_notebooks/` in sequence on Google Colab (L4/T4 GPU,
 4. `02_notebooks/02b_datasprint_v3_eval_and_submit.ipynb` — Benchmarks `A_raw`, `B_lut`, and `C_lut_fliptta_wbf` on 1× Tesla T4, packages root `inference.py`, and generates `#1` LB `submission_001798f3...csv` (`44.99750`).
 5. `02_notebooks/03b_datasprint_error_analysis_v3.ipynb` — Runs the GPU T4 error analysis suite (`500×` bootstrap, Cleanlab ObjectLab `2.9.0`, TIDE, IoU decay, Eigen-CAM sky energy, 4-bucket DRI, GPU NMS sweep, and 5-fold OOF check).
 
+### 5. Running the RoadGuard AI Web App Locally (and Cloud Deploy)
+
+1. **Install backend API dependencies & start FastAPI (`http://127.0.0.1:8000`) from repo root:**
+   ```bash
+   pip install -r app/backend/requirements.txt
+   python -m uvicorn app.backend.main:app --host 127.0.0.1 --port 8000
+   ```
+   *(If you already have CUDA PyTorch installed locally, keep your existing `torch`/`torchvision` wheel when installing `ultralytics` and install `fastapi`, `uvicorn[standard]`, `python-multipart`, and `opencv-python-headless`.)*
+
+2. **Install & start the React + Vite frontend (`http://127.0.0.1:5173`) in a second terminal:**
+   ```bash
+   cd app/frontend
+   npm install
+   npm run dev -- --host 127.0.0.1 --port 5173
+   ```
+   Open `http://127.0.0.1:5173` (`/api/*` requests proxy cleanly to `:8000`).
+
+3. **Optional Single-Container Docker Build (Repo Root Context, Port `7860`):**
+   ```bash
+   docker build -f app/Dockerfile -t roadguard-ai .
+   docker run -p 7860:7860 roadguard-ai
+   ```
+
+4. **Redeploy the Modal NVIDIA A10 / L4 GPU Backend:**
+   ```bash
+   modal deploy app/modal_app.py
+   ```
+   *(Set `min_containers=1` inside `app/modal_app.py` 5–10 minutes before a live demo for zero cold starts, then revert to `min_containers=0` afterward.)*
+
 ---
 
 ## Mandatory Compliance Statement
 
 - **Generic Pretrained Weights Only:** Initialized strictly from Ultralytics generic COCO checkpoints (`yolo26s.pt`, `yolo26m.pt`). Zero road/pavement/crack-pretrained weights and zero Objects365/DINOv3 weights were used.
 - **Competition Data Only:** Trained and validated solely on the official `14,691` train / `2,150` val / `4,200` test competition partitions with zero external road or crack datasets.
-- **Links:** [Kaggle T4 Submission Notebook (Public)](https://www.kaggle.com/code/pavankumar9938/datasprint-2-0-v3-yolo26m-inference-t4-benchmark) | [Kaggle Input Weights & Scripts Dataset (Public)](https://www.kaggle.com/datasets/pavankumar9938/datasprint2-v3-yolo26m-weights) | [Google Sheets Experiment Tracker (Public View)](https://docs.google.com/spreadsheets/d/1vV_PznSUwoTXO1xN0gbigATpID_XKsJ7TdEHRu2XYP0/view?usp=sharing) | [Google Doc Full Technical Report (Public View)](https://docs.google.com/document/d/1Zuy7Fj5oitn2LOqGKfjFYh6lm-pICSMqKajjc3_DTHU/view?usp=sharing) | [2-Page Technical Write-Up PDF (Repo)](DataSprint2_Technical_Writeup_2Page.pdf) & [Drive Public View](https://drive.google.com/file/d/1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir/view?usp=sharing) | [Public Reports Folder (Drive)](https://drive.google.com/drive/folders/1O2yze88kBeQc3fHy-rKlHzHngb2Gt-J-?usp=sharing) *(competition dataset `01_data/` kept private)*
+- **Links:** [Live Web App (Vercel)](https://roadguard-ai-datasprint2.vercel.app) | [Live A10 GPU API (Modal)](https://pavan-alt--roadguard-ai-datasprint2-api.us-east.modal.run/api/health) | [Kaggle T4 Submission Notebook (Public)](https://www.kaggle.com/code/pavankumar9938/datasprint-2-0-v3-yolo26m-inference-t4-benchmark) | [Kaggle Input Weights & Scripts Dataset (Public)](https://www.kaggle.com/datasets/pavankumar9938/datasprint2-v3-yolo26m-weights) | [Google Sheets Experiment Tracker (Public View)](https://docs.google.com/spreadsheets/d/1vV_PznSUwoTXO1xN0gbigATpID_XKsJ7TdEHRu2XYP0/view?usp=sharing) | [Google Doc Full Technical Report (Public View)](https://docs.google.com/document/d/1Zuy7Fj5oitn2LOqGKfjFYh6lm-pICSMqKajjc3_DTHU/view?usp=sharing) | [2-Page Technical Write-Up PDF (Repo)](DataSprint2_Technical_Writeup_2Page.pdf) & [Drive Public View](https://drive.google.com/file/d/1IlV-Sk9pc0iUJm908KhvY-yFaxclyMir/view?usp=sharing) | [Public Reports Folder (Drive)](https://drive.google.com/drive/folders/1O2yze88kBeQc3fHy-rKlHzHngb2Gt-J-?usp=sharing) *(competition dataset `01_data/` kept private)*
