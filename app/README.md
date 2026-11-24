@@ -24,16 +24,16 @@ Open `http://127.0.0.1:5173` in your browser (`/api/*` requests proxy cleanly to
 
 ---
 
-## Option A Deployment (Recommended): Vercel Frontend + Modal Tesla T4 GPU Backend
+## Option A Deployment (Recommended): Vercel Frontend + Modal NVIDIA A10 / L4 GPU Backend
 
-### 1. Deploy the GPU Backend to Modal (`gpu="T4"`)
+### 1. Deploy the GPU Backend to Modal (`gpu=["A10", "L4"]`)
 Run from the **repository root** (`c:\Users\Pavan\Downloads\DataSprinit`):
 ```bash
 pip install modal
 modal token new
 modal deploy app/modal_app.py
 ```
-Modal outputs a permanent HTTPS URL (e.g. `https://<workspace>--roadguard-ai-datasprint2-api.modal.run`). Verify `<MODAL_URL>/api/health` returns `device: "cuda"` (`Tesla T4`).
+Modal outputs a permanent HTTPS URL (e.g. `https://<workspace>--roadguard-ai-datasprint2-api.modal.run`). Verify `<MODAL_URL>/api/health` returns `device: "cuda"` (`NVIDIA A10G` / `L4`).
 
 For zero cold starts during your Final Demo Round slot, set `min_containers=1` in `app/modal_app.py` shortly before presenting, then revert to `min_containers=0` afterward.
 

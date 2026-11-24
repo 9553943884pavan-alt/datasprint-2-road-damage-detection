@@ -1,4 +1,4 @@
-"""Modal 1.x GPU deployment entrypoint for RoadGuard AI (Tesla T4)."""
+"""Modal 1.x GPU deployment entrypoint for RoadGuard AI (NVIDIA A10 / L4)."""
 
 from __future__ import annotations
 
@@ -51,7 +51,7 @@ image = (
 
 @app.function(
     image=image,
-    gpu="T4",
+    gpu=["A10", "L4"],
     scaledown_window=180,
     min_containers=0,
     max_containers=2,
